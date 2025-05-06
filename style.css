@@ -130,6 +130,11 @@ button.next {
 
 /* MOBILE (max-width: 768px) */
 @media (max-width: 768px) {
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
   header {
     padding: 8px 10px;
     height: 60px;
