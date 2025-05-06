@@ -12,110 +12,94 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+/* Header - Desktop */
 header {
   background-color: #0077b6;
-  padding: 20px;
+  padding: 15px 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .Logo img {
-  max-width: 100%;
-  margin-left: 20px;
-}
-
-.Menu {
-  display: flex;
-  align-items: center;
+  
+  margin-left: 10px;
 }
 
 .ContainerMenu {
   list-style: none;
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
   padding: 0;
   margin: 0;
 }
 
 .aba {
-  margin-right: 20px;
   text-decoration: none;
-  color: #ffffff;
+  color: white;
   background: linear-gradient(90deg, #ffd60a, #ff9f1c);
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 25px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .aba:hover {
   background: linear-gradient(90deg, #ff9f1c, #ffd60a);
-  transform: scale(1.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
 }
 
-/* Título e texto */
+/* Conteúdo principal */
 .titulo {
   text-align: center;
-  margin: 40px 0 20px 0;
-  font-size: 2.5rem;
+  margin: 30px 0 15px;
+  font-size: 2rem;
   color: #0077b6;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .texto01 {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #333;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 /* Carrossel */
 .carousel-wrapper {
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  padding: 0 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  padding: 0 15px;
 }
 
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 900px;
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background: white;
 }
 
 .slide {
   position: absolute;
   inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease;
+}
+
+.slide.active {
+  opacity: 1;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.slide.active {
-  opacity: 1;
 }
 
 button.prev,
@@ -126,19 +110,14 @@ button.next {
   background: linear-gradient(90deg, #ffd60a, #ff9f1c);
   color: white;
   border: none;
-  font-size: 2rem;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-weight: bold;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
-}
-
-button.prev:hover,
-button.next:hover {
-  background: linear-gradient(90deg, #ff9f1c, #ffd60a);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button.prev {
@@ -149,62 +128,73 @@ button.next {
   right: 10px;
 }
 
-/* Responsivo */
-/* Responsivo para a barra de navegação */
+/* MOBILE (max-width: 768px) */
 @media (max-width: 768px) {
+  header {
+    padding: 8px 10px;
+    height: 60px;
+    overflow: hidden;
+  }
+
+  .Logo img {
+    height: 40px;
+    width: 60px;
+    
+  }
+
   .ContainerMenu {
-    flex-direction: row; /* lado a lado */
-    flex-wrap: wrap; /* quebra linha se necessário */
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
+    margin-top: 8px;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  /* Ajustes nos botões */
+  .ContainerMenu::-webkit-scrollbar {
+    display: none;
+  }
+
   .aba {
-    margin-right: 0; /* remove margem lateral */
-    padding: 8px 12px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    flex-shrink: 0;
   }
 
-  /* Ajuste da responsividade do título e texto */
   .titulo {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
   }
 
   .texto01 {
     font-size: 1rem;
   }
-}
 
-/* Ajustes para telas menores (ex: celular) */
-@media (max-width: 480px) {
-  .aba {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  /* Ajuste para os botões de navegação no carrossel */
   button.prev,
   button.next {
-    font-size: 1.5rem;
-    padding: 8px 12px;
-  }
-
-  /* Ajustando a largura dos botões para evitar que fiquem empilhados */
-  .carousel-wrapper {
-    flex-direction: column; /* Faz o carrossel se ajustar na tela menor */
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
   }
 }
 
-/* Adicionando estilo para os botões na horizontal */
-.carousel {
-  display: flex;
-  justify-content: space-between; /* Faz com que os botões fiquem ao lado */
-}
+/* Mobile pequeno (max-width: 480px) */
+@media (max-width: 480px) {
+  .Logo img {
+    height: 30px;
+    width: 50px;
+  }
 
-button.prev,
-button.next {
-  width: auto;
-  margin: 0 5px;
+  .ContainerMenu {
+    gap: 4px;
+  }
+
+  .aba {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
 }
