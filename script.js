@@ -28,3 +28,5 @@ nextBtn.addEventListener('click', () => {
 
 // Inicia mostrando a primeira imagem
 showSlide(currentIndex);
+
+

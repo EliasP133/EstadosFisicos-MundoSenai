@@ -1,99 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comandos CSS</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="pai">
+      <div class="divhead">
+        <header>
+          <div class="Logo">
+            <img
+              src="Imagens/IMG_8978.PNG"
+              alt="Logomarca"
+              width="170"
+              height="90"
+            />
+          </div>
 
-        <div class="divhead">
-            <header>
+          <div class="Menu">
+            <div class="Texto">
+              <nav>
+                <ul class="ContainerMenu">
+                  <a class="aba" href=""> Menu </a>
 
-                <div class="Logo"><img src="Imagens/IMG_8978.PNG" alt="Logomarca" width="170" height="90"></div>
+                  <a class="aba" href="sobre/sobre.html">Sobre </a>
 
-                <div class="Menu">
+                  <a class="aba" href="simulador/simulador.html">Simulador </a>
 
+                  <a class="aba" href="situação/situação.html">Situação.Ap </a>
 
-                    <div class="Texto">
+                  <a class="aba" href="equipe/equipe.html">Equipe </a>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </div>
 
-                        <nav>
-                            <ul class="ContainerMenu">
-                                <a class="aba" href=""> Menu
+      <div class="divbottom">
+        <div class="divtext">
+          <h1 class="titulo">MUNDO SENAI</h1>
 
-
-                                </a>
-
-                                <a class="aba" href="sobre/sobre.html">Sobre
-
-                                </a>
-
-                                <a class="aba" href="simulador/simulador.html">Simulador
-
-
-                                </a>
-
-                                <a class="aba" href="situação/situação.html">Situação.Ap
-
-
-                                </a>
-
-                                <a class="aba" href="equipe/equipe.html">Equipe
-
-                                </a>
-
-
-                            </ul>
-                        </nav>
-
-                    </div>
-
-
-                </div>
-
-            </header>
-
+          <p class="texto01">Simulador - Estados Fisicos da Matéria</p>
         </div>
 
-        <div class="divbottom">
-            <div class="divtext">
-                <h1 class="titulo">MUNDO SENAI</h1>
-
-                <p class="texto01"> Simulador - Estados Fisicos da Matéria</p>
-
+        <div class="carousel-wrapper">
+          <div class="carousel">
+            <div class="slide active">
+              <img src="Imagens/imagem1.jpg" alt="Imagem 1" />
+            </div>
+            <div class="slide">
+              <img src="Imagens/imagem2.png" alt="Imagem 2" />
+            </div>
+            <div class="slide">
+              <img src="Imagens/imagem3.jpg" alt="Imagem 3" />
             </div>
 
-
-            <div class="carousel-wrapper">
-                <div class="carousel">
-                    <div class="slide active">
-                        <img src="Imagens/imagem1.jpg" alt="Imagem 1" >
-                    </div>
-                    <div class="slide">
-                        <img src="Imagens/imagem2.png" alt="Imagem 2" >
-                    </div>
-                    <div class="slide">
-                        <img src="Imagens/imagem3.jpg" alt="Imagem 3" >
-                    </div>
-
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
-                </div>
-            </div>
-            <script src="script.js"></script>
-
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+          </div>
         </div>
-
-
+        <script src="script.js"></script>
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>
