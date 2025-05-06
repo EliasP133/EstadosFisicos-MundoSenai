@@ -154,16 +154,17 @@ button.next {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
   }
 
   .ContainerMenu {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; /* ✅ mantém os itens lado a lado */
+    flex-wrap: wrap;     /* ✅ permite quebra de linha se precisar */
+    justify-content: center;
     gap: 10px;
-    padding-left: 20px;
   }
+
 
   .titulo {
     font-size: 2rem;
