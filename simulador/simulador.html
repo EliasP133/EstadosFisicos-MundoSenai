@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Tabela Periódica</title>
+    <link rel="stylesheet" href="simulador.css">
+</head>
+
+<body>
+
+
+    <header>
+        <div class="Menu">
+            <div class="Logo">
+
+                <img src="../Imagens/IMG_8978.PNG" alt="Logomarca" width="170" height="90">
+
+                
+            </div>
+            <nav>
+                <ul class="ContainerMenu">
+
+                    <a class="aba" href="../home.html"> Menu
+
+                    </a>
+                     
+                    <a class="aba" href="../sobre/sobre.html">Sobre
+
+                    </a>
+                    
+                    <a class="aba" href="">Simulador
+
+
+                    </a>
+
+                    <a class="aba" href="../situação/situação.html">Situação.Ap
+
+
+                    </a>
+
+                    <a class="aba" href="../equipe/equipe.html">Equipe
+
+                    </a>
+                    
+            
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Simulador de Estados Físicos da Matéria</h1>
+
+    <div class="controls">
+        <label for="element">Elemento:</label>
+        <select id="element">
+            <option value="water">Água</option>
+            <option value="oxygen">Oxigênio</option>
+            <option value="argon">Argônio</option>
+            <option value="neon">Neônio</option>
+        </select>
+
+        <label for="temperature">Temperatura:</label>
+         <p id="temperature" min="-300" max="200" value="0"></p>
+        <div class="temperature11">
+            <span id="tempValue">0</span> °C
+        </div>
+        
+
+        <div class="buttons">
+            <button id="solidBtn">Sólido</button>
+            <button id="liquidBtn">Líquido</button>
+            <button id="gasBtn">Gasoso</button>
+        </div>
+
+        <p class="stateEstado">Estado atual: <strong id="stateLabel">Sólido</strong></p>
+    </div>
+
+    <canvas id="simCanvas"></canvas>
+
+    <script src="simulador.js"></script>
+</body>
+
+</html>

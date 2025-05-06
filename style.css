@@ -1,0 +1,163 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+
+  background-color: #f0f8ff; /* branco */
+  color: #014f86; /* azul turquesa escuro */
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #0077b6; /* azul claro */
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Logo img {
+  max-width: 100%;
+  margin-left: 20px;
+  
+}
+
+/* Menu */
+.Menu {
+  display: flex;
+  align-items: center;
+}
+
+.ContainerMenu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.aba {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ffd60a, #ff9f1c); /* amarelo vibrante para laranja */
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.aba:hover {
+  background: linear-gradient(90deg, #ff9f1c, #ffd60a); /* invertendo as cores no hover */
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Título */
+.titulo {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  font-size: 3rem;
+  color: #0077b6;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto Principal */
+.texto01 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.carousel-wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ /* Centraliza verticalmente também */
+}
+
+.carousel {
+  position: relative;
+  width: 1200px;  /* Largura desejada */
+  height: 450px; /* Altura desejada */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background: white;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Faz com que as imagens preencham o slide */
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ffd60a, #ff9f1c); /* Gradiente amarelo para laranja */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button.prev:hover, button.next:hover{
+  background: linear-gradient(90deg, #ff9f1c, #ffd60a); /* Gradiente invertido no hover */
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ContainerMenu {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

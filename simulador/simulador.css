@@ -1,0 +1,178 @@
+/* Reset básico (mantido igual) */
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f8ff;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente todo o conteúdo */
+}
+
+/* Header (MANTIDO EXATAMENTE IGUAL) */
+header {
+  background-color: #0077b6;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .Menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Logo {
+  margin-left: 20px;
+}
+
+.ContainerMenu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.aba {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ffd60a, #ff9f1c);
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.aba:hover {
+  background: linear-gradient(90deg, #ff9f1c, #ffd60a);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Conteúdo principal centralizado */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0077b6;
+  margin: 40px 0;
+  width: 100%;
+}
+
+/* Container dos controles - centralizado */
+.controls {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens */
+  gap: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+/* Estilos dos controles (mantendo seu estilo original) */
+label {
+  font-size: 1.6rem;
+  color: #333;
+  width: 100%;
+  text-align: center; /* Centraliza o texto */
+}
+
+select {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 360px;
+  height: 50px;
+}
+
+.temperature11 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0px 0;
+}
+
+/* Container dos botões - centralizado */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: 5px;
+  
+}
+
+/* Botões (mantendo SEU ESTILO ORIGINAL) */
+.buttons button {
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0077b6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttons button:hover {
+  background-color: #005f82;
+  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.1);
+}
+
+#stateLabel {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #0077b6;
+}
+
+/* Canvas - centralizado */
+canvas {
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  background-color: #e6f7ff;
+  width: 90%;
+  max-width: 800px;
+  height: 500px;
+  margin-bottom: 40px;
+}
+
+.stateEstado{
+  font-size: 1.6rem;
+}
+
+/* Responsividade (ajustes mínimos) */
+@media (max-width: 768px) {
+  .buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .buttons button {
+      width: 100%;
+  }
+  
+  canvas {
+      height: 400px;
+  }
+}
