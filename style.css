@@ -234,12 +234,12 @@ button.next {
 
 @media (max-width: 350px) {
   .Logo img {
-    height: 35px;
-    width: 55px;
+    height: 25px;
+    width: 50px;
   }
 
   .ContainerMenu {
-   
+   margin-left: 5px;
     gap: 4px;
   }
 
