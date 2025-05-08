@@ -39,7 +39,7 @@ header {
 .aba {
   text-decoration: none;
   color: white;
-  background: linear-gradient(90deg, #ffd60a, #ff9f1c);
+  background: linear-gradient(30deg,#397de2, #cc1821 );
   padding: 8px 16px;
   border-radius: 25px;
   transition: all 0.3s ease;
@@ -107,7 +107,7 @@ button.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(90deg, #ffd60a, #ff9f1c);
+  background: linear-gradient(45deg, #cc1821, #397de2);
   color: white;
   border: none;
   font-size: 1.5rem;
@@ -120,6 +120,10 @@ button.next {
   justify-content: center;
 }
 
+button.prev:hover, button.next:hover{
+  background: linear-gradient(90deg, #ff9f1c, #ffd60a);
+  
+}
 button.prev {
   left: 10px;
 }
