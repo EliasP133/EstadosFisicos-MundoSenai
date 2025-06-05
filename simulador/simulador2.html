@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Game: Estados da Matéria</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .quiz-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #0077b6;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .options button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .options button:hover {
+      background-color: #005f82;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Espaço para gifs/vídeos */
+    #videoErro, #videoFinal {
+      margin-top: 20px;
+      display: none;
+    }
+
+    #videoErro video, #videoFinal video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h1>Mini Game: Estados da Matéria</h1>
+    <div class="question" id="question">Carregando...</div>
+    <div class="options" id="options"></div>
+    <div id="result"></div>
+
+    <!-- Espaço para vídeo/GIF de erro -->
+    <div id="videoErro">
+      <video src="/Imagens/Vídeo sem título ‐ Feito com o Clipchamp.mp4" width="600" height="300px" autoplay muted></video>
+    </div>
+
+    <!-- Espaço para vídeo/GIF de finalização -->
+    <div id="videoFinal">
+      <video src="/Imagens/202506051603.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Qual é o estado da água a 110°C?",
+        options: ["Sólido", "Líquido", "Gasoso"],
+        answer: "Gasoso"
+      },
+      {
+        question: "Qual elemento tem ponto de fusão abaixo de -200°C?",
+        options: ["Água", "Neônio", "Oxigênio"],
+        answer: "Neônio"
+      },
+      {
+        question: "O que ocorre quando um sólido vira líquido?",
+        options: ["Condensação", "Fusão", "Sublimação"],
+        answer: "Fusão"
+      }
+    ];
+
+    let currentQuestion = 0;
+
+    function loadQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById("question").textContent = q.question;
+
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.textContent = option;
+        btn.onclick = () => checkAnswer(option);
+        optionsDiv.appendChild(btn);
+      });
+
+      document.getElementById("result").textContent = "";
+      hideAllVideos();
+    }
+
+    function hideAllVideos() {
+      document.getElementById("videoErro").style.display = "none";
+      document.getElementById("videoFinal").style.display = "none";
+    }
+
+    function checkAnswer(selected) {
+      const correct = questions[currentQuestion].answer;
+      const result = document.getElementById("result");
+      const videoErro = document.getElementById("videoErro");
+      const videoFinal = document.getElementById("videoFinal");
+
+      if (selected === correct) {
+        result.textContent = "✅ Acertou!";
+        result.style.color = "green";
+        hideAllVideos();
+
+        setTimeout(() => {
+          currentQuestion++;
+          if (currentQuestion < questions.length) {
+            loadQuestion();
+          } else {
+            // Mostrar tela final com gif/vídeo
+            document.getElementById("question").textContent = "🏆 Parabéns! Você concluiu o mini game.";
+            document.getElementById("options").innerHTML = '<button onclick="window.location.href=\'simulador.html\'">Voltar para o simulador</button>';
+            result.textContent = "";
+            videoFinal.style.display = "block";
+          }
+        }, 1000);
+
+      } else {
+        result.textContent = "❌ Errou! Estude mais um pouco";
+        result.style.color = "red";
+        videoErro.style.display = "block";
+
+        setTimeout(() => {
+          window.location.href = "simulador.html";
+        }, 4000);
+      }
+    }
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>

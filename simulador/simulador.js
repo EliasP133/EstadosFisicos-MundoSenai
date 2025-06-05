@@ -17,7 +17,7 @@ const elementData = {
 };
 
 class Particle {
-  constructor(x, y, radius = 5) {
+  constructor(x, y, radius = 7) {
     this.x = x;
     this.y = y;
     this.radius = radius;

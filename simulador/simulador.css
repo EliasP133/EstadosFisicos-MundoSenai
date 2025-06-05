@@ -162,6 +162,10 @@ canvas {
   font-size: 1.6rem;
 }
 
+.teste{
+  font-size: 50px;
+}
+
 /* Responsividade (ajustes mínimos) */
 @media (max-width: 768px) {
   .buttons {
