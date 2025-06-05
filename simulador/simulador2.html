@@ -82,7 +82,7 @@
 
     <!-- Espaço para vídeo/GIF de erro -->
     <div id="videoErro">
-      <video src="../Imagens/Vídeo sem título ‐ Feito com o Clipchamp.mp4" width="600" height="300px" autoplay muted></video>
+      <video src="../Imagens/Vídeo sem título ‐ Feito com o Clipchamp.mp4" width="600px" height="300px" autoplay muted></video>
     </div>
 
     <!-- Espaço para vídeo/GIF de finalização -->
@@ -160,8 +160,9 @@
         }, 1000);
 
       } else {
-        result.textContent = "❌ Errou! Estude mais um pouco";
+        result.textContent = "❌ Errou! Estude mais";
         result.style.color = "red";
+        document.getElementById("options").innerHTML = ""; // Oculta as opções
         videoErro.style.display = "block";
 
         setTimeout(() => {
